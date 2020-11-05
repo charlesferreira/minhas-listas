@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+.list-group-item button:last-child {
+  visibility: hidden;
+}
+
+.list-group-item:hover button:last-child,
+.list-group-item:focus-within button:last-child {
+  visibility: visible;
+}
+
+.text-muted * {
+  color: inherit;
+}
