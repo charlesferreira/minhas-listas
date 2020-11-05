@@ -6,3 +6,7 @@
 .list-group-item:focus-within button:last-child {
   visibility: visible;
 }
+
+.text-muted * {
+  color: inherit;
+}
