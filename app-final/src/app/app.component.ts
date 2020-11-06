@@ -6,15 +6,15 @@ const LISTAS_DE_TAREFAS: ListaDeTarefas[] = [
   {
     nome: 'Tarefas da casa',
     tarefas: [
-      { nome: 'Varrer a casa', concluída: false },
-      { nome: 'Lavar a louça', concluída: true },
+      { nome: 'Varrer a casa', concluida: false },
+      { nome: 'Lavar a louça', concluida: true },
     ],
   },
   {
     nome: 'Lista de mercado',
     tarefas: [
-      { nome: 'Feijão', concluída: false },
-      { nome: 'Paçoca', concluída: false },
+      { nome: 'Feijão', concluida: false },
+      { nome: 'Paçoca', concluida: false },
     ],
   },
 ];

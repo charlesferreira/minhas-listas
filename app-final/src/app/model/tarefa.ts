@@ -1,4 +1,4 @@
 export interface Tarefa {
   nome?: string;
-  concluída?: boolean;
+  concluida?: boolean;
 }
