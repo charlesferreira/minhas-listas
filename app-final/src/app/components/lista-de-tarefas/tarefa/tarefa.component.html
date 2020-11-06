@@ -1,5 +1,5 @@
 <div class="list-group-item d-flex align-items-center pl-3" [class.text-muted]="tarefa.concluida">
-  <button class="btn btn-sm">
+  <button class="btn btn-sm" (click)="onAlternarStatus()">
     <i class="far" [ngClass]="tarefa.concluida ? 'fa-check-square' : 'fa-square'"></i>
   </button>
 

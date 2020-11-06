@@ -8,4 +8,11 @@ import { ListaDeTarefas } from 'src/app/model/lista-de-tarefas';
 })
 export class ListaDeTarefasComponent {
   @Input() lista: ListaDeTarefas;
+
+  ordenarLista() {
+    this.lista.tarefas = [
+      ...this.lista.tarefas.filter(t => !t.concluida),
+      ...this.lista.tarefas.filter(t => t.concluida),
+    ];
+  }
 }

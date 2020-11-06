@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Tarefa } from 'src/app/model/tarefa';
 
 @Component({
@@ -8,4 +8,11 @@ import { Tarefa } from 'src/app/model/tarefa';
 })
 export class TarefaComponent {
   @Input() tarefa: Tarefa;
+
+  @Output() alternarStatus = new EventEmitter();
+
+  onAlternarStatus() {
+    this.tarefa.concluida = !this.tarefa.concluida;
+    this.alternarStatus.emit();
+  }
 }

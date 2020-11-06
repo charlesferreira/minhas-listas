@@ -9,6 +9,6 @@
   </div>
 
   <div class="list-group list-group-flush">
-    <app-tarefa [tarefa]="tarefa" *ngFor="let tarefa of lista.tarefas"></app-tarefa>
+    <app-tarefa [tarefa]="tarefa" (alternarStatus)="ordenarLista()" *ngFor="let tarefa of lista.tarefas"></app-tarefa>
   </div>
 </div>
