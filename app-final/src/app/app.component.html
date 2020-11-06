@@ -8,35 +8,6 @@
   </header>
 
   <main class="card-columns mt-5">
-    <div class="card bg-light shadow-sm" *ngFor="let lista of listasDeTarefas">
-      <div class="card-header bg-primary text-white d-flex align-items-center">
-        <h5 class="m-0 py-2 flex-grow-1" contenteditable="true">
-          {{ lista.nome }}
-        </h5>
-        <button class="btn btn-sm text-white">
-          <i class="fa fa-lg fa-plus"></i>
-        </button>
-      </div>
-      <div
-        class="list-group list-group-flush"
-        [class.text-muted]="tarefa.concluida"
-        *ngFor="let tarefa of lista.tarefas"
-      >
-        <div class="list-group-item d-flex align-items-center pl-3">
-          <button class="btn btn-sm">
-            <i class="far" [ngClass]="tarefa.concluida ? 'fa-check-square' : 'fa-square'"></i>
-          </button>
-
-          <strong class="mr-auto" contenteditable="true" *ngIf="!tarefa.concluida; else tarefaConcluida">
-            {{ tarefa.nome }}
-          </strong>
-          <ng-template #tarefaConcluida>
-            <del class="mr-auto" contenteditable="true">{{ tarefa.nome }}</del>
-          </ng-template>
-
-          <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-        </div>
-      </div>
-    </div>
+    <app-lista-de-tarefas *ngFor="let lista of listasDeTarefas" [lista]="lista"></app-lista-de-tarefas>
   </main>
 </div>
