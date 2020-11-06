@@ -8,6 +8,6 @@
   </header>
 
   <main class="card-columns mt-5">
-    <app-lista-de-tarefas *ngFor="let lista of listasDeTarefas" [lista]="lista"></app-lista-de-tarefas>
+    <app-lista-de-tarefas [lista]="lista" *ngFor="let lista of listasDeTarefas"></app-lista-de-tarefas>
   </main>
 </div>

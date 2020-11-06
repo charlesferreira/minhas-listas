@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListaDeTarefasComponent } from './components/lista-de-tarefas/lista-de-tarefas.component';
+import { TarefaComponent } from './components/lista-de-tarefas/tarefa/tarefa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaDeTarefasComponent
+    ListaDeTarefasComponent,
+    TarefaComponent
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,14 @@
+<div class="list-group-item d-flex align-items-center pl-3" [class.text-muted]="tarefa.concluida">
+  <button class="btn btn-sm">
+    <i class="far" [ngClass]="tarefa.concluida ? 'fa-check-square' : 'fa-square'"></i>
+  </button>
+
+  <strong class="flex-grow-1" contenteditable="true" *ngIf="!tarefa.concluida; else tarefaConcluida">
+    {{ tarefa.nome }}
+  </strong>
+  <ng-template #tarefaConcluida>
+    <del class="flex-grow-1" contenteditable="true">{{ tarefa.nome }}</del>
+  </ng-template>
+
+  <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+</div>
