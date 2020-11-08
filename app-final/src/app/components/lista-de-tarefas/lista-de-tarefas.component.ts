@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ListaDeTarefas } from 'src/app/model/lista-de-tarefas';
+import { Tarefa } from 'src/app/model/tarefa';
 
 @Component({
   selector: 'app-lista-de-tarefas',
@@ -19,5 +20,9 @@ export class ListaDeTarefasComponent {
       ...this.lista.tarefas.filter(t => !t.concluida),
       ...this.lista.tarefas.filter(t => t.concluida),
     ];
+  }
+
+  onExcluirTarefa(tarefa: Tarefa) {
+    this.lista.tarefas = [...this.lista.tarefas.filter(t => t !== tarefa)];
   }
 }

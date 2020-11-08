@@ -12,6 +12,7 @@ export class TarefaComponent implements AfterViewInit {
   @ViewChild('nome') nomeRef: ElementRef;
 
   @Output() alternarStatus = new EventEmitter();
+  @Output() excluir = new EventEmitter();
 
   ngAfterViewInit() {
     if (!this.tarefa.nome) {
@@ -26,5 +27,9 @@ export class TarefaComponent implements AfterViewInit {
   onAlternarStatus() {
     this.tarefa.concluida = !this.tarefa.concluida;
     this.alternarStatus.emit();
+  }
+
+  onExcluir() {
+    this.excluir.emit();
   }
 }
