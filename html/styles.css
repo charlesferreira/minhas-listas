@@ -18,3 +18,15 @@
 .text-muted * {
   color: inherit;
 }
+
+[contenteditable='true'] {
+  white-space: nowrap;
+  overflow: hidden;
+}
+[contenteditable='true'] br {
+  display: none;
+}
+[contenteditable='true'] * {
+  display: inline;
+  white-space: nowrap;
+}
