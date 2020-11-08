@@ -9,6 +9,11 @@ import { ListaDeTarefas } from 'src/app/model/lista-de-tarefas';
 export class ListaDeTarefasComponent {
   @Input() lista: ListaDeTarefas;
 
+  onAdicionarTarefa() {
+    const novaTarefa = { nome: '', concluida: false };
+    this.lista.tarefas = [novaTarefa, ...this.lista.tarefas];
+  }
+
   ordenarLista() {
     this.lista.tarefas = [
       ...this.lista.tarefas.filter(t => !t.concluida),

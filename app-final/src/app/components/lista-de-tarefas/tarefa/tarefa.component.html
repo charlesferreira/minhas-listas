@@ -3,12 +3,7 @@
     <i class="far" [ngClass]="tarefa.concluida ? 'fa-check-square' : 'fa-square'"></i>
   </button>
 
-  <strong class="flex-grow-1" contenteditable="true" *ngIf="!tarefa.concluida; else tarefaConcluida">
-    {{ tarefa.nome }}
-  </strong>
-  <ng-template #tarefaConcluida>
-    <del class="flex-grow-1" contenteditable="true">{{ tarefa.nome }}</del>
-  </ng-template>
+  <span class="flex-grow-1" contenteditable="true" #nome> {{ tarefa.nome }} </span>
 
   <button class="btn btn-sm"><i class="fa fa-times"></i></button>
 </div>
