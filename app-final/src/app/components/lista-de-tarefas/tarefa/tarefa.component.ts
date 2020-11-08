@@ -19,6 +19,10 @@ export class TarefaComponent implements AfterViewInit {
     }
   }
 
+  onEditarNome(nome: string) {
+    this.tarefa.nome = nome;
+  }
+
   onAlternarStatus() {
     this.tarefa.concluida = !this.tarefa.concluida;
     this.alternarStatus.emit();

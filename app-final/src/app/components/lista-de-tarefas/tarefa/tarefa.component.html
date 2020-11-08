@@ -3,7 +3,16 @@
     <i class="far" [ngClass]="tarefa.concluida ? 'fa-check-square' : 'fa-square'"></i>
   </button>
 
-  <span class="flex-grow-1" contenteditable="true" #nome> {{ tarefa.nome }} </span>
+  <span
+    #nome
+    class="flex-grow-1"
+    contenteditable="true"
+    (keyup.enter)="nome.blur()"
+    (keyup.esc)="nome.blur()"
+    (blur)="onEditarNome($event.target.innerText)"
+  >
+    {{ tarefa.nome }}
+  </span>
 
   <button class="btn btn-sm"><i class="fa fa-times"></i></button>
 </div>
