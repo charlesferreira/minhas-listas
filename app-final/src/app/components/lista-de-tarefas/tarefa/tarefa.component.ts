@@ -21,6 +21,11 @@ export class TarefaComponent implements AfterViewInit {
   }
 
   onEditarNome(nome: string) {
+    if (!nome) {
+      this.onExcluir();
+      return;
+    }
+
     this.tarefa.nome = nome;
   }
 
