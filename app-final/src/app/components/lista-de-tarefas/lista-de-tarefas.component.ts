@@ -18,6 +18,14 @@ export class ListaDeTarefasComponent implements AfterViewInit {
     }
   }
 
+  onEditarNome(nome: string) {
+    this.lista.nome = nome;
+
+    if (this.lista.tarefas.length === 0) {
+      this.onAdicionarTarefa();
+    }
+  }
+
   onAdicionarTarefa() {
     const novaTarefa = { nome: '', concluida: false };
     this.lista.tarefas = [novaTarefa, ...this.lista.tarefas];

@@ -1,6 +1,13 @@
 <div class="card bg-light shadow-sm">
   <div class="card-header bg-primary text-white d-flex align-items-center">
-    <h5 class="m-0 py-2 flex-grow-1" contenteditable="true" #nome>
+    <h5
+      #nome
+      class="m-0 py-2 flex-grow-1"
+      contenteditable="true"
+      (keyup.enter)="nome.blur()"
+      (keyup.esc)="nome.blur()"
+      (blur)="onEditarNome($event.target.innerText)"
+    >
       {{ lista.nome }}
     </h5>
     <button class="btn btn-sm text-white" (click)="onAdicionarTarefa()">
