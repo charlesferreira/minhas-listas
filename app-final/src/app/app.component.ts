@@ -26,9 +26,14 @@ const LISTAS_DE_TAREFAS: ListaDeTarefas[] = [
 })
 export class AppComponent {
   listasDeTarefas = LISTAS_DE_TAREFAS;
+  modoEdicaoAtivo = false;
 
   onCriarLista() {
     const novaLista: ListaDeTarefas = { nome: '', tarefas: [] };
     this.listasDeTarefas = [novaLista, ...this.listasDeTarefas];
+  }
+
+  alternarModoEdicao() {
+    this.modoEdicaoAtivo = !this.modoEdicaoAtivo;
   }
 }

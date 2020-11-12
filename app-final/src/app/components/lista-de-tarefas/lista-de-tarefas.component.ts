@@ -9,6 +9,7 @@ import { Tarefa } from 'src/app/model/tarefa';
 })
 export class ListaDeTarefasComponent implements AfterViewInit {
   @Input() lista: ListaDeTarefas;
+  @Input() editando: boolean;
 
   @ViewChild('nome') nomeRef: ElementRef;
 

@@ -1,5 +1,5 @@
 <div class="card bg-light shadow-sm">
-  <div class="card-header bg-primary text-white d-flex align-items-center">
+  <div class="card-header text-white d-flex align-items-center" [ngClass]="editando ? 'bg-danger' : 'bg-primary'">
     <h5
       #nome
       class="m-0 py-2 flex-grow-1"
@@ -10,9 +10,17 @@
     >
       {{ lista.nome }}
     </h5>
-    <button class="btn btn-sm text-white" (click)="onAdicionarTarefa()">
-      <i class="fa fa-lg fa-plus"></i>
-    </button>
+
+    <ng-container *ngIf="editando; else acoesPadrao">
+      <button class="btn btn-sm text-white"><i class="fa fa-lg fa-redo"></i></button>
+      <button class="btn btn-sm text-white"><i class="fa fa-lg fa-trash-alt"></i></button>
+    </ng-container>
+
+    <ng-template #acoesPadrao>
+      <button class="btn btn-sm text-white" (click)="onAdicionarTarefa()">
+        <i class="fa fa-lg fa-plus"></i>
+      </button>
+    </ng-template>
   </div>
 
   <div class="list-group list-group-flush">

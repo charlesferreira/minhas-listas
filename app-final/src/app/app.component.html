@@ -2,12 +2,22 @@
   <header class="d-md-flex flex-align-center mt-5">
     <h1 class="display-4">Minhas listas</h1>
     <div class="d-flex align-items-center ml-auto">
-      <button class="btn" (click)="onCriarLista()"><i class="fa fa-sm fa-plus mr-1"></i> Nova lista</button>
-      <button class="btn ml-2"><i class="fa fa-sm fa-edit"></i> Editar</button>
+      <button class="btn ml-2" *ngIf="modoEdicaoAtivo; else acoesPadrao" (click)="alternarModoEdicao()">
+        <i class="fa fa-sm fa-check"></i> Concluir edição
+      </button>
+
+      <ng-template #acoesPadrao>
+        <button class="btn" (click)="onCriarLista()"><i class="fa fa-sm fa-plus mr-1"></i> Nova lista</button>
+        <button class="btn ml-2" (click)="alternarModoEdicao()"><i class="fa fa-sm fa-edit"></i> Editar</button>
+      </ng-template>
     </div>
   </header>
 
   <main class="card-columns mt-5">
-    <app-lista-de-tarefas [lista]="lista" *ngFor="let lista of listasDeTarefas"></app-lista-de-tarefas>
+    <app-lista-de-tarefas
+      [lista]="lista"
+      [editando]="modoEdicaoAtivo"
+      *ngFor="let lista of listasDeTarefas"
+    ></app-lista-de-tarefas>
   </main>
 </div>
