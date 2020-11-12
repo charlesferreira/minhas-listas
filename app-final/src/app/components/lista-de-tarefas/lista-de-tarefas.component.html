@@ -12,7 +12,7 @@
     </h5>
 
     <ng-container *ngIf="editando; else acoesPadrao">
-      <button class="btn btn-sm text-white"><i class="fa fa-lg fa-redo"></i></button>
+      <button class="btn btn-sm text-white" (click)="onRemoverConcluidas()"><i class="fa fa-lg fa-redo"></i></button>
       <button class="btn btn-sm text-white" (click)="onExcluirLista()"><i class="fa fa-lg fa-trash-alt"></i></button>
     </ng-container>
 

@@ -48,4 +48,8 @@ export class ListaDeTarefasComponent implements AfterViewInit {
   onExcluirLista() {
     this.excluir.emit();
   }
+
+  onRemoverConcluidas() {
+    this.lista.tarefas = this.lista.tarefas.filter(tarefa => !tarefa.concluida);
+  }
 }
