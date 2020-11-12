@@ -8,12 +8,21 @@
 
       <ng-template #acoesPadrao>
         <button class="btn" (click)="onCriarLista()"><i class="fa fa-sm fa-plus mr-1"></i> Nova lista</button>
-        <button class="btn ml-2" (click)="alternarModoEdicao()"><i class="fa fa-sm fa-edit"></i> Editar</button>
+        <button class="btn ml-2" (click)="alternarModoEdicao()" *ngIf="listasDeTarefas.length">
+          <i class="fa fa-sm fa-edit"></i> Editar
+        </button>
       </ng-template>
     </div>
   </header>
 
-  <main class="card-columns mt-5">
+  <ng-template #semListas>
+    <p class="lead text-center mt-5">
+      Não há listas no momento. Que tal
+      <a href="#" (click)="onCriarLista(); $event.preventDefault()">criar sua primeira lista agora</a>?
+    </p>
+  </ng-template>
+
+  <main class="card-columns mt-5" *ngIf="listasDeTarefas.length; else semListas">
     <app-lista-de-tarefas
       [lista]="lista"
       [editando]="modoEdicaoAtivo"

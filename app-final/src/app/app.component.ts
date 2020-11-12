@@ -39,5 +39,9 @@ export class AppComponent {
 
   onExcluirLista(lista: ListaDeTarefas) {
     this.listasDeTarefas = this.listasDeTarefas.filter(l => l !== lista);
+
+    if (this.listasDeTarefas.length === 0 && this.modoEdicaoAtivo) {
+      this.alternarModoEdicao();
+    }
   }
 }
