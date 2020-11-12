@@ -17,6 +17,7 @@
     <app-lista-de-tarefas
       [lista]="lista"
       [editando]="modoEdicaoAtivo"
+      (excluir)="onExcluirLista(lista)"
       *ngFor="let lista of listasDeTarefas"
     ></app-lista-de-tarefas>
   </main>

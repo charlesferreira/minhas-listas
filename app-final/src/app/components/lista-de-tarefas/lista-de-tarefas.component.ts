@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ListaDeTarefas } from 'src/app/model/lista-de-tarefas';
 import { Tarefa } from 'src/app/model/tarefa';
 
@@ -12,6 +12,8 @@ export class ListaDeTarefasComponent implements AfterViewInit {
   @Input() editando: boolean;
 
   @ViewChild('nome') nomeRef: ElementRef;
+
+  @Output() excluir = new EventEmitter();
 
   ngAfterViewInit() {
     if (!this.lista.nome) {
@@ -40,6 +42,10 @@ export class ListaDeTarefasComponent implements AfterViewInit {
   }
 
   onExcluirTarefa(tarefa: Tarefa) {
-    this.lista.tarefas = [...this.lista.tarefas.filter(t => t !== tarefa)];
+    this.lista.tarefas = this.lista.tarefas.filter(t => t !== tarefa);
+  }
+
+  onExcluirLista() {
+    this.excluir.emit();
   }
 }
